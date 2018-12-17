@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="44bd1a9f-614c-4e4d-b11f-444bed9ea029" activeEnvironment="Default" name="Rhino TransactionInserter" resourceRoot="${projectDir}" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="626ee432-cae4-448b-9c0a-5a2d885b8134" wadlVersion="http://wadl.dev.java.net/2009/02" name="Transaction Insert Service" type="rest" basePath="/ovcp/tm/services/txinsert/rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:description>An API insert transactions into Rhino</con:description><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://ovcp.bas.test.ns.nl</con:endpoint></con:endpoints><con:resource name="/transaction" path="/transaction" id="e165d74e-b9b7-473a-8e94-9ffa4a8b2333"><con:settings/><con:parameters/><con:method name="post" id="bacc81f9-dd45-479f-a8f3-f2175d5f1140" method="POST"><con:description>post transactions here to be processed by rhino
+</con:description><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>201</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status/><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=iso-8859-1</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 400 415</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>multipart/form-data</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tran="http://rhino-release/ovcp/services/txinsert/rest/transaction">tran:Fault</con:element></con:representation><con:request name="Sample Request" id="9e154099-d11c-4e7c-b773-e6b3abd94f08" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://ovcp.bas.test.ns.nl</con:endpoint><con:request>{  "ciNameCmdb" : "GAT00001",
+   "businessEntityID": 4,
+   "validationStatus": 0,
+   "fileEvent": 1,
+   "fileHeaderTag": 1,
+   "fileName": "TEST.TXT",
+   "fileReceptionDatetime": "2017-12-021T10:50:01Z",
+   "fileSdoaDeviceId": 12001,
+   "fileSource": "L1",
+   "applicationTransactionSequenceNumber": 8,
+   "previousATSN": 0,
+   "mediaSerialNumberId": 123456789,
+   "msgReportDate": 1513852611,
+   "msgReportDateTime": "2017-12-21T10:40:52Z",
+   "msgSdoaDeviceId": 12001,
+   "msgSequenceNumber": 136,
+   "transactionStatus": 1,
+   "transactionType": 30,
+   "transactionValue": 2000,
+   "transactionBusinessDate": "2017-12-21T00:00:00Z",
+   "applicationNetworkId": 528000,
+   "applicationRetailerId": 4,
+   "applicationStatus": 2,
+   "destinationId": 561,
+   "eodVersionId": 678,
+   "fareIndicator": 1,
+   "initialFee": 2000,
+   "lastAddValueAmount": 3000,
+   "lastAddValueDate": "2017-10-021T09:32:33Z",
+   "lastAddValueDeviceId": 497786,
+   "lastAddValueNetworkId": 528000,
+   "lastAddValuePaymentMeansType": 1,
+   "lastAddValueSequenceNumber": 2,
+   "mediaCountryCode": 528,
+   "mediaIssuerId": 528000,
+   "mediaRecycler": 0,
+   "mediaRetailerId": 528004,
+   "mediaValidityDate": "2021-12-011T00:00:00Z"
+}</con:request><con:originalUri>http://rhino-release/ovcp/services/txinsert/rest/transaction</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="1133808b-f86d-4f60-b68c-c1068bd7260a" name="Rhino Transactions"><con:description>Create a new file so it can be used in the Test Steps
+Location and name of the file H:\\SOAPui\\SOAPui Settings\\Datasets\\Variabelen_Rhino_Transacties.csv
+</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="be9ac7dc-143c-4048-be85-06d913ceb688" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Rhino Transactions" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Start Rhino Transacties" id="3fefb1b5-73ba-43b5-bab2-207d6e032ad8"><con:settings/><con:config service="Transaction Insert Service" resourcePath="/ovcp/tm/services/txinsert/rest/transaction" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Start Rhino Transacties" id="9e154099-d11c-4e7c-b773-e6b3abd94f08" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://ovcp.bas.test.ns.nl</con:endpoint><con:request>{   "authentication":{
+    		"username": "sap_test",
+   		"password": "sap_test"
+					},
+   "ciNameCmdb": "${#TestCase#ciNameCmdb}",
+   "businessEntityID": "${#TestCase#businessEntityID}",
+   "validationStatus": "${#TestCase#validationStatus}",
+   "fileEvent": "${#TestCase#fileEvent}",
+   "fileHeaderTag": "${#TestCase#fileHeaderTag}",
+   "fileName": "${#TestCase#fileName}",
+   "fileReceptionDatetime": "${#TestCase#fileReceptionDatetime}",
+   "fileSdoaDeviceId": "${#TestCase#fileSdoaDeviceId}",
+   "fileSource": "${#TestCase#fileSource}",
+   "applicationTransactionSequenceNumber": "${#TestCase#applicationTransactionSequenceNumber}",
+   "previousATSN": "${#TestCase#previousATSN}",
+   "mediaSerialNumberId": "${#TestCase#mediaSerialNumberId}",
+   "msgReportDate": "${#TestCase#msgReportDate}",
+   "msgReportDateTime": "${#TestCase#msgReportDateTime}",
+   "msgSdoaDeviceId": "${#TestCase#msgSdoaDeviceId}",
+   "msgSequenceNumber": "${#TestCase#msgSequenceNumber}",
+   "transactionStatus": "${#TestCase#transactionStatus}",
+   "transactionType": "${#TestCase#transactionType}",
+   "transactionValue": "${#TestCase#transactionValue}",
+   "transactionBusinessDate": "${#TestCase#transactionBusinessDate}",
+   "applicationNetworkId": "${#TestCase#applicationNetworkId}",
+   "applicationRetailerId": "${#TestCase#applicationRetailerId}",
+   "applicationStatus": "${#TestCase#applicationStatus}",
+   "destinationId": "${#TestCase#destinationId}",
+   "eodVersionId": "${#TestCase#eodVersionId}",
+   "fareIndicator": "${#TestCase#fareIndicator}",
+   "initialFee": "${#TestCase#initialFee}",
+   "lastAddValueAmount": "${#TestCase#lastAddValueAmount}",
+   "lastAddValueDate": "${#TestCase#lastAddValueDate}",
+   "lastAddValueDeviceId": "${#TestCase#lastAddValueDeviceId}",
+   "lastAddValueNetworkId": "${#TestCase#lastAddValueNetworkId}",
+   "lastAddValuePaymentMeansType": "${#TestCase#lastAddValuePaymentMeansType}",
+   "lastAddValueSequenceNumber": "${#TestCase#lastAddValueSequenceNumber}",
+   "mediaCountryCode": "${#TestCase#mediaCountryCode}",
+   "mediaIssuerId": "${#TestCase#mediaIssuerId}",
+   "mediaRecycler": "${#TestCase#mediaRecycler}",
+   "mediaRetailerId": "${#TestCase#mediaRetailerId}",
+   "mediaValidityDate": "${#TestCase#mediaValidityDate}",
+   "stationId": "${#TestCase#stationId}",
+   "productCode": "${#TestCase#productCode}",
+   "serviceProviderId": "${#TestCase#serviceProviderId}"
+}</con:request><con:originalUri>http://rhino-release/ovcp/services/txinsert/rest/transaction</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="4c7d2a70-692e-4fd5-9d03-68f77a898ab7" name="Valid HTTP Status Codes - Check Internetstatus code Created"><con:configuration><codes>201</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="Delay" id="7dd64f8a-9c11-4fd1-b09b-f1020fcb6b9b"><con:settings/><con:config><delay>50</delay></con:config></con:testStep><con:testStep type="groovy" name="Next Line CSV" id="0de5c54a-0be9-4c66-826d-51cd9631a380"><con:settings/><con:config><script>/*Read in the next line of the file
+  We can use the same fileReader created in the Setup script because it
+  was assigned to the context variable.*/
+
+log.info context.expand('${#TestCase#TestCase}' + " is succesvol in RHINO gezet")
+  
+nextLine = context.fileReader.readLine()
+
+/*If the end of the file hasn't been reached (nextLine does NOT equal null)
+  split the line and assign new property values, rename test request steps,
+  and go back to the first test request step*/
+
+if(nextLine != null){
+ String[] propData = nextLine.split(";")
+ curTC = testRunner.testCase
+curTC.setPropertyValue("Nr",propData[0])
+curTC.setPropertyValue("TestCase",propData[1])
+curTC.setPropertyValue("ciNameCmdb",propData[2])
+curTC.setPropertyValue("businessEntityID",propData[3])
+curTC.setPropertyValue("validationStatus",propData[4])
+curTC.setPropertyValue("fileEvent",propData[5])
+curTC.setPropertyValue("fileHeaderTag",propData[6])
+curTC.setPropertyValue("fileName",propData[7])
+curTC.setPropertyValue("fileReceptionDatetime",propData[8])
+curTC.setPropertyValue("fileSdoaDeviceId",propData[9])
+curTC.setPropertyValue("fileSource",propData[10])
+curTC.setPropertyValue("applicationTransactionSequenceNumber",propData[11])
+curTC.setPropertyValue("previousATSN",propData[12])
+curTC.setPropertyValue("mediaSerialNumberId",propData[13])
+curTC.setPropertyValue("msgReportDate",propData[14])
+curTC.setPropertyValue("msgReportDateTime",propData[15])
+curTC.setPropertyValue("msgSdoaDeviceId",propData[16])
+curTC.setPropertyValue("msgSequenceNumber",propData[17])
+curTC.setPropertyValue("transactionStatus",propData[18])
+curTC.setPropertyValue("transactionType",propData[19])
+curTC.setPropertyValue("transactionValue",propData[20])
+curTC.setPropertyValue("transactionBusinessDate",propData[21])
+curTC.setPropertyValue("applicationNetworkId",propData[22])
+curTC.setPropertyValue("applicationRetailerId",propData[23])
+curTC.setPropertyValue("applicationStatus",propData[24])
+curTC.setPropertyValue("destinationId",propData[25])
+curTC.setPropertyValue("eodVersionId",propData[26])
+curTC.setPropertyValue("fareIndicator",propData[27])
+curTC.setPropertyValue("initialFee",propData[28])
+curTC.setPropertyValue("lastAddValueAmount",propData[29])
+curTC.setPropertyValue("lastAddValueDate",propData[30])
+curTC.setPropertyValue("lastAddValueDeviceId",propData[31])
+curTC.setPropertyValue("lastAddValueNetworkId",propData[32])
+curTC.setPropertyValue("lastAddValuePaymentMeansType",propData[33])
+curTC.setPropertyValue("lastAddValueSequenceNumber ",propData[34])
+curTC.setPropertyValue("mediaCountryCode",propData[35])
+curTC.setPropertyValue("mediaIssuerId",propData[36])
+curTC.setPropertyValue("mediaRecycler",propData[37])
+curTC.setPropertyValue("mediaRetailerId",propData[38])
+curTC.setPropertyValue("mediaValidityDate",propData[39])
+curTC.setPropertyValue("stationId",propData[40])
+curTC.setPropertyValue("productCode",propData[41])
+curTC.setPropertyValue("serviceProviderId",propData[42])
+testRunner.gotoStep(0)
+}</script></con:config></con:testStep><con:setupScript>//Create a new filereader object, using the context variable so it can be used between test components
+context.fileReader = new BufferedReader(new FileReader("H:\\SOAPui\\SOAPui Settings\\Datasets\\Variabelen_Rhino_Transacties.csv"))
+
+//Read in the first line of the data file
+firstLine = context.fileReader.readLine()
+
+//Split the first line into a string array and assign the array elements to various test case properties
+String[] propData = firstLine.split(";")
+ curTC = testRunner.testCase
+curTC.setPropertyValue("Nr",propData[0])
+curTC.setPropertyValue("Testcase",propData[1])
+curTC.setPropertyValue("ciNameCmdb",propData[2])
+curTC.setPropertyValue("businessEntityID",propData[3])
+curTC.setPropertyValue("validationStatus",propData[4])
+curTC.setPropertyValue("fileEvent",propData[5])
+curTC.setPropertyValue("fileHeaderTag",propData[6])
+curTC.setPropertyValue("fileName",propData[7])
+curTC.setPropertyValue("fileReceptionDatetime",propData[8])
+curTC.setPropertyValue("fileSdoaDeviceId",propData[9])
+curTC.setPropertyValue("fileSource",propData[10])
+curTC.setPropertyValue("applicationTransactionSequenceNumber",propData[11])
+curTC.setPropertyValue("previousATSN",propData[12])
+curTC.setPropertyValue("mediaSerialNumberId",propData[13])
+curTC.setPropertyValue("msgReportDate",propData[14])
+curTC.setPropertyValue("msgReportDateTime",propData[15])
+curTC.setPropertyValue("msgSdoaDeviceId",propData[16])
+curTC.setPropertyValue("msgSequenceNumber",propData[17])
+curTC.setPropertyValue("transactionStatus",propData[18])
+curTC.setPropertyValue("transactionType",propData[19])
+curTC.setPropertyValue("transactionValue",propData[20])
+curTC.setPropertyValue("transactionBusinessDate",propData[21])
+curTC.setPropertyValue("applicationNetworkId",propData[22])
+curTC.setPropertyValue("applicationRetailerId",propData[23])
+curTC.setPropertyValue("applicationStatus",propData[24])
+curTC.setPropertyValue("destinationId",propData[25])
+curTC.setPropertyValue("eodVersionId",propData[26])
+curTC.setPropertyValue("fareIndicator",propData[27])
+curTC.setPropertyValue("initialFee",propData[28])
+curTC.setPropertyValue("lastAddValueAmount",propData[29])
+curTC.setPropertyValue("lastAddValueDate",propData[30])
+curTC.setPropertyValue("lastAddValueDeviceId",propData[31])
+curTC.setPropertyValue("lastAddValueNetworkId",propData[32])
+curTC.setPropertyValue("lastAddValuePaymentMeansType",propData[33])
+curTC.setPropertyValue("lastAddValueSequenceNumber ",propData[34])
+curTC.setPropertyValue("mediaCountryCode",propData[35])
+curTC.setPropertyValue("mediaIssuerId",propData[36])
+curTC.setPropertyValue("mediaRecycler",propData[37])
+curTC.setPropertyValue("mediaRetailerId",propData[38])
+curTC.setPropertyValue("mediaValidityDate",propData[39])
+curTC.setPropertyValue("stationId",propData[40])
+curTC.setPropertyValue("productCode",propData[41])
+curTC.setPropertyValue("serviceProviderId",propData[42])</con:setupScript><con:tearDownScript>context.fileReader.close()</con:tearDownScript><con:properties><con:property><con:name>Nr</con:name><con:value>32</con:value></con:property><con:property><con:name>Testcase</con:name><con:value>BCS2 - Reis</con:value></con:property><con:property><con:name>ciNameCmdb</con:name><con:value>FAT00041</con:value></con:property><con:property><con:name>businessEntityID</con:name><con:value>4</con:value></con:property><con:property><con:name>validationStatus</con:name><con:value>0</con:value></con:property><con:property><con:name>fileEvent</con:name><con:value>1</con:value></con:property><con:property><con:name>fileHeaderTag</con:name><con:value>1</con:value></con:property><con:property><con:name>fileName</con:name><con:value>TEST.TXT</con:value></con:property><con:property><con:name>fileReceptionDatetime</con:name><con:value>2018-05-13T13:50:01Z</con:value></con:property><con:property><con:name>fileSdoaDeviceId</con:name><con:value>12002</con:value></con:property><con:property><con:name>fileSource</con:name><con:value>L1</con:value></con:property><con:property><con:name>applicationTransactionSequenceNumber</con:name><con:value>126</con:value></con:property><con:property><con:name>previousATSN</con:name><con:value>125</con:value></con:property><con:property><con:name>mediaSerialNumberId</con:name><con:value>463657987</con:value></con:property><con:property><con:name>msgReportDate</con:name><con:value>1526219401</con:value></con:property><con:property><con:name>msgReportDateTime</con:name><con:value>2018-05-13T13:50:01Z</con:value></con:property><con:property><con:name>msgSdoaDeviceId</con:name><con:value>12002</con:value></con:property><con:property><con:name>msgSequenceNumber</con:name><con:value>232</con:value></con:property><con:property><con:name>transactionStatus</con:name><con:value>1</con:value></con:property><con:property><con:name>transactionType</con:name><con:value>31</con:value></con:property><con:property><con:name>transactionValue</con:name><con:value>2000</con:value></con:property><con:property><con:name>transactionBusinessDate</con:name><con:value>2018-05-13T13:50:01Z</con:value></con:property><con:property><con:name>applicationNetworkId</con:name><con:value>528000</con:value></con:property><con:property><con:name>applicationRetailerId</con:name><con:value>4</con:value></con:property><con:property><con:name>applicationStatus</con:name><con:value>2</con:value></con:property><con:property><con:name>destinationId</con:name><con:value>561</con:value></con:property><con:property><con:name>eodVersionId</con:name><con:value>678</con:value></con:property><con:property><con:name>fareIndicator</con:name><con:value>1</con:value></con:property><con:property><con:name>initialFee</con:name><con:value>2000</con:value></con:property><con:property><con:name>lastAddValueAmount</con:name><con:value>3000</con:value></con:property><con:property><con:name>lastAddValueDate</con:name><con:value>2018-05-13T12:50:01Z</con:value></con:property><con:property><con:name>lastAddValueDeviceId</con:name><con:value>497786</con:value></con:property><con:property><con:name>lastAddValueNetworkId</con:name><con:value>528000</con:value></con:property><con:property><con:name>lastAddValuePaymentMeansType</con:name><con:value>1</con:value></con:property><con:property><con:name>lastAddValueSequenceNumber </con:name><con:value>2</con:value></con:property><con:property><con:name>mediaCountryCode</con:name><con:value>528</con:value></con:property><con:property><con:name>mediaIssuerId</con:name><con:value>528000</con:value></con:property><con:property><con:name>mediaRecycler</con:name><con:value>0</con:value></con:property><con:property><con:name>mediaRetailerId</con:name><con:value>528004</con:value></con:property><con:property><con:name>mediaValidityDate</con:name><con:value>2021-12-01T00:00:00Z</con:value></con:property><con:property><con:name>serviceProviderId</con:name><con:value>4</con:value></con:property><con:property><con:name>stationId</con:name><con:value>561</con:value></con:property><con:property><con:name>productCode</con:name><con:value>504</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

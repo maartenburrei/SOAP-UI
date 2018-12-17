@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ece9ce6a-244d-4299-8822-9e92652131ca" activeEnvironment="Default" name="NAL Pickup Sub" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a4f21b5e-8352-43b0-9cd4-5ccc165377f0" wsaVersion="NONE" name="NAL_PickUp_Stub_OutBinding" type="wsdl" bindingName="{http://nsc.nl/xi/int/stub}NAL_PickUp_Stub_OutBinding" soapVersion="1_1" anonymous="optional" definition="file:/H:/SOAP-UI/NS%20Flex%20Backend/NAL_PickUp_Stub_OutService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\H:\SOAP-UI\NS%20Flex%20Backend\NAL_PickUp_Stub_OutService.wsdl"><con:part><con:url>file:\H:\SOAP-UI\NS%20Flex%20Backend\NAL_PickUp_Stub_OutService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="NAL_PickUp_Stub_Out" targetNamespace="http://nsc.nl/xi/int/stub" xmlns:p1="http://nsc.nl/xi/int/stub" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_NAL_PickUp_Stub"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/int/stub" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/int/stub" xmlns:p11="http://nsc.nl/xi/int/cdm">
+      <xsd:import namespace="http://nsc.nl/xi/int/cdm"/>
+      <xsd:element name="NAL_PickUp_Stub_Request" type="NAL_PickUp_Stub_Request"/>
+      <xsd:element name="NAL_PickUp_Stub_Response" type="NAL_PickUp_Stub_Response"/>
+      <xsd:complexType name="NAL_PickUp_Stub_Response">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">619eeca2aaa011e8a0a30000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="is_successfull" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NAL_PickUp_Stub_Request">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">913ecffdaaa011e8a2650000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="engraved_id" type="p11:engraved_id"/>
+          <xsd:element name="status">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="Delivered"/>
+                <xsd:enumeration value="Expired"/>
+                <xsd:enumeration value="Deleted"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/int/cdm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/int/cdm">
+      <xsd:simpleType name="engraved_id">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Engraved ID van chipkaart of CT ticket</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">4e421468056f11e6a5100000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="NAL_PickUp_Stub_Request">
+    <wsdl:documentation/>
+    <wsdl:part name="NAL_PickUp_Stub_Request" element="p1:NAL_PickUp_Stub_Request"/>
+  </wsdl:message>
+  <wsdl:message name="NAL_PickUp_Stub_Response">
+    <wsdl:documentation/>
+    <wsdl:part name="NAL_PickUp_Stub_Response" element="p1:NAL_PickUp_Stub_Response"/>
+  </wsdl:message>
+  <wsdl:portType name="NAL_PickUp_Stub_Out">
+    <wsdl:documentation/>
+    <wsdl:operation name="NAL_PickUp_Stub">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_NAL_PickUp_Stub"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:NAL_PickUp_Stub_Request"/>
+      <wsdl:output message="p1:NAL_PickUp_Stub_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NAL_PickUp_Stub_OutBinding" type="p1:NAL_PickUp_Stub_Out">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="NAL_PickUp_Stub">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NAL_PickUp_Stub_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:NAL_PickUp_Stub_OutBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fint%2Fstub" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:NAL_PickUp_Stub_OutBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fint%2Fstub" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http://nsc.nl/xi/int/stub</con:endpoint><con:endpoint>http://sw025v449.acc.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPA_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http://nsc.nl/xi/int/stub</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http://nsc.nl/xi/int/stub</con:endpoint></con:endpoints><con:operation id="14f3b16a-e8cd-461a-bff4-b44b2147c5ab" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="NAL_PickUp_Stub" bindingOperationName="NAL_PickUp_Stub" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d6651785-654a-45fa-8540-cfe777ba4870" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v449.acc.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPA_200&amp;receiverParty=&amp;receiverService=&amp;interface=NAL_PickUp_Stub_Out&amp;interfaceNamespace=http://nsc.nl/xi/int/stub</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:stub="http://nsc.nl/xi/int/stub">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <stub:NAL_PickUp_Stub_Request>\r
+         <engraved_id>3528010489233698</engraved_id>\r
+         <status>Delivered</status>\r
+      </stub:NAL_PickUp_Stub_Request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

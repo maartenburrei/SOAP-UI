@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="447b3f95-644d-4dba-9331-0a858b7babb2" activeEnvironment="Default" name="NSC_ISS | Claim_OutService" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="76962f32-d7f7-4a7e-a5b6-b914d8179522" wsaVersion="NONE" name="Claim_OutBinding" type="wsdl" bindingName="{http://nsc.nl/xi/iss}Claim_OutBinding" soapVersion="1_1" anonymous="optional" definition="file:/H:/Documenten/NS%20Commercie/Service+/Refund/WSDL's/Claim_OutService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\H:\Documenten\NS%20Commercie\Service+\Refund\WSDL's\Claim_OutService.wsdl"><con:part><con:url>file:\H:\Documenten\NS%20Commercie\Service+\Refund\WSDL's\Claim_OutService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Claim_Out" targetNamespace="http://nsc.nl/xi/iss" xmlns:p1="http://nsc.nl/xi/iss" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_ConfirmClaim_Sync"/>
+  <wsp:Policy wsu:Id="OP_ValidateClaim_Sync"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/iss" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/iss">
+      <xsd:element name="ValidateClaimResponse" type="ValidateClaimResponse"/>
+      <xsd:element name="ConfirmClaimResponse" type="ConfirmClaimResponse"/>
+      <xsd:element name="ValidateClaimRequest" type="ValidateClaimRequest"/>
+      <xsd:element name="ConfirmClaimRequest" type="ConfirmClaimRequest"/>
+      <xsd:simpleType name="DateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">d67e195c1b6811e7b4120000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:dateTime">
+          <xsd:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ValidateClaimRequest">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">5a2c7dd9953111e6ba0b0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0"/>
+          <xsd:element name="control_area" type="DT_control_area"/>
+          <xsd:element name="Claim" type="Claim"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ValidateClaimResponse">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">236b659c10a111e78a5e0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">ed1f070f953111e69230005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="control_area" type="DT_control_area">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">ed1f0710953111e68128005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="error_area" type="DT_error_area" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">ed1f0711953111e68779005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="success" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">ed1f0712953111e6c0f9005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="operation_header">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">97cbabfa48c711e6c7620000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="version" type="xsd:integer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Trip">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">62e635841b6911e7c5250000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="travel_date" type="xsd:date">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8b748ce11e6c215005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="departure_time" type="xsd:time">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9930af21952a11e6cd6c005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="check_in" type="DateTime">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8b848ce11e6cbf3005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="check_out" type="DateTime">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8b948ce11e6a206005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="station_from" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8ba48ce11e6a1c6005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="station_from_name" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8bb48ce11e699de005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="station_to" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8bc48ce11e693fd005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="station_to_name" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8bd48ce11e6b0bf005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="actual_trip_is_intended_trip" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8be48ce11e6c6c2005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="IntendedTrip" type="IntendedTrip" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f49e8bf48ce11e6a06c005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ns_internationaal_ind" type="xsd:boolean" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">bb9d2961f83c11e6a59e005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BankAccount">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">f4fd61ad48cc11e6b6630000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="iban">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="34"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="account_owner_name" type="xsd:string"/>
+          <xsd:element name="account_owner_city" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConfirmClaimResponse">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">74b6e8fc953111e6aadd0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0"/>
+          <xsd:element name="control_area" type="DT_control_area"/>
+          <xsd:element name="error_area" type="DT_error_area" minOccurs="0"/>
+          <xsd:element name="success" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Customer">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">0a03311010a111e7977a0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="nsr_number">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">376108bc48cd11e6b7c0005056b95623</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="email_address" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">376108be48cd11e69810005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="BankAccount" type="BankAccount" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">376108bf48cd11e6b087005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_control_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">523f96049ce211e58e5f0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="source" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06658a8611e098d4f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="source_send_date" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06668a8611e0bd07f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="user_name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06678a8611e0c8c9f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="message_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06688a8611e08225f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="correlation_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06698a8611e09372f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IntendedTrip">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">1adb2c7548ce11e68fa80000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="station_from" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="station_from_name" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="station_to" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="station_to_name" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConfirmClaimRequest">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">379cc3c010a111e7adb50000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">05001b56953211e6c8a2005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="control_area" type="DT_control_area">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">05001b57953211e68a7d005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Claim" type="Claim">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">05001b58953211e68391005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_error_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">1d78dae8ae0e11e582240000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="errors" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd73401011e08955f04da2021657</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="error_message" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd72401011e08f8ef04da2021657</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="message_aditional_info" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd70401011e0b976f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_text" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6f401011e096a5f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_location" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6e401011e0be9af04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_timestamp" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6a401011e0b183f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_code" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6d401011e0bea1f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_type" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6c401011e08a8af04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_source" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6b401011e09664f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Claim">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">0ecebfd1185211e7862c0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="claim_date" type="xsd:date">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">786f667848ce11e699c4005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="engraved_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">786f667948ce11e69c6b005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="card_type_id">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">0b8e9594139111e7aa14005056b95623</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="OV"/>
+                <xsd:enumeration value="CT"/>
+                <xsd:enumeration value="ET"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="claimed_delay">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">786f667a48ce11e6888e005056b95623</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="30-59"/>
+                <xsd:enumeration value="60-119"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="Customer" type="Customer">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">786f667b48ce11e6afb9005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Trip" type="Trip">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">786f667c48ce11e68b4a005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmClaimRequest">
+    <wsdl:documentation/>
+    <wsdl:part name="ConfirmClaimRequest" element="p1:ConfirmClaimRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmClaimResponse">
+    <wsdl:documentation/>
+    <wsdl:part name="ConfirmClaimResponse" element="p1:ConfirmClaimResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateClaimRequest">
+    <wsdl:documentation/>
+    <wsdl:part name="ValidateClaimRequest" element="p1:ValidateClaimRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateClaimResponse">
+    <wsdl:documentation/>
+    <wsdl:part name="ValidateClaimResponse" element="p1:ValidateClaimResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Claim_Out">
+    <wsdl:documentation/>
+    <wsdl:operation name="ConfirmClaim_Sync">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ConfirmClaim_Sync"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:ConfirmClaimRequest"/>
+      <wsdl:output message="p1:ConfirmClaimResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateClaim_Sync">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ValidateClaim_Sync"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:ValidateClaimRequest"/>
+      <wsdl:output message="p1:ValidateClaimResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Claim_OutBinding" type="p1:Claim_Out">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="ConfirmClaim_Sync">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateClaim_Sync">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Claim_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:Claim_OutBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:Claim_OutBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sapcpa.acceptatie.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint></con:endpoints><con:operation id="62237f4f-420b-448a-9351-952d46d45d8c" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="ConfirmClaim_Sync" bindingOperationName="ConfirmClaim_Sync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="baf89625-b45c-43fd-838f-933e48e6604c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <iss:ConfirmClaimRequest>\r
+         <!--Optional:-->\r
+          <header>
+            <version>1</version>
+         </header>
+         <control_area>
+            <source>CUPZ</source>
+            <source_send_date>2016-07-13T12:18:00.000Z</source_send_date>
+            <user_name>CUPZ</user_name>
+            <message_id>INSERT_CLAIM</message_id>
+            <correlation_id>00112233445566778898</correlation_id>
+         </control_area>
+         <Claim>
+            <claim_date>2017-06-07</claim_date>
+            <engraved_id>3528010463076330</engraved_id>
+            <card_type_id>OV</card_type_id>
+            <claimed_delay>30-59</claimed_delay>
+             <Customer>
+               <nsr_number>20027446</nsr_number>
+               <email_address>karin.vanleeuwen@ns.nl</email_address>
+            </Customer>
+            <Trip>
+               <travel_date>2017-04-13</travel_date>
+               <departure_time>09:43:00.000</departure_time>
+               <check_in>2017-04-13T09:35:00.000Z</check_in>
+               <check_out>2017-04-13T11:01:00.000Z</check_out>
+               <station_from>470</station_from>
+               <station_from_name>nijmegen</station_from_name>
+               <station_to>058</station_to>
+               <station_to_name>amsterdam centraal</station_to_name>
+               <actual_trip_is_intended_trip>true</actual_trip_is_intended_trip>
+            </Trip>
+         </Claim>
+      </iss:ConfirmClaimRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3c2c79fd-aefe-4758-ac8b-c8f2bd2ec16d" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="ValidateClaim_Sync" bindingOperationName="ValidateClaim_Sync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3e2cebc3-2c1c-4901-a4f5-adfa480c84d2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Claim_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <iss:ValidateClaimRequest>\r
+          <control_area>
+            <source>CUPZ</source>
+            <source_send_date>2016-07-13T12:18:00.000Z</source_send_date>
+            <user_name>CUPZ</user_name>
+            <message_id>INSERT_CLAIM</message_id>
+            <correlation_id>00112233445566778898</correlation_id>
+         </control_area>
+         <Claim>
+            <claim_date>2017-06-07</claim_date>
+            <engraved_id>3528010463076330</engraved_id>
+            <card_type_id>OV</card_type_id>
+            <claimed_delay>30-59</claimed_delay>
+            <Customer>
+               <nsr_number>20027446</nsr_number>
+               <email_address>karin.vanleeuwen@ns.nl</email_address>
+            </Customer>
+            <Trip>
+               <travel_date>2017-04-12</travel_date>
+               <departure_time>09:43:00.000</departure_time>
+               <check_in>2017-04-11T09:35:00.000Z</check_in>
+               <check_out>2017-04-11T11:01:00.000Z</check_out>
+               <station_from>470</station_from>
+               <station_from_name>nijmegen</station_from_name>
+               <station_to>621</station_to>
+               <station_to_name>utrecht</station_to_name>
+               <actual_trip_is_intended_trip>true</actual_trip_is_intended_trip>
+            </Trip>
+         </Claim>
+      </iss:ValidateClaimRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="55788aa7-9c06-40ef-97c1-5b203c6b3ec1" activeEnvironment="Default" name="NSC_INTERNET | Ideal_Status_OutService" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="91852d96-9c54-4f7e-9dc7-76d34b86787f" wsaVersion="NONE" name="Ideal_Status_OutBinding" type="wsdl" bindingName="{http://nsc.nl/xi/internet}Ideal_Status_OutBinding" soapVersion="1_1" anonymous="optional" definition="file:/H:/Documenten/NS%20Commercie/NS%20Flex/WSDL's/Ideal_Status_OutService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\H:\Documenten\NS%20Commercie\NS%20Flex\WSDL's\Ideal_Status_OutService.wsdl"><con:part><con:url>file:\H:\Documenten\NS%20Commercie\NS%20Flex\WSDL's\Ideal_Status_OutService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Ideal_Status_Out" targetNamespace="http://nsc.nl/xi/internet" xmlns:p2="http://nsc.nl/xi/ks/cdm" xmlns:p1="http://nsc.nl/xi/internet" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_Update"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/ks/cdm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/ks/cdm">
+      <xsd:element name="MT_data_IDEAL_status" type="DT_data_IDEAL_status"/>
+      <xsd:complexType name="DT_control_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">8d40a1c1d96a11e6a9460000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="source" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06658a8611e098d4f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="source_send_date" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06668a8611e0bd07f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="user_name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06678a8611e0c8c9f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="message_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06688a8611e08225f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="correlation_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06698a8611e09372f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="send_mail" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5f431518d13711e38bbbd4bed9adc387</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="endoftime" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">8d1d299fd96a11e6a105005056b921a0</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_data_IDEAL_status">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">f41a3524326b11e49d960000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="control_area" type="DT_control_area">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">a1e68c9b4c0511e19048f04da20217c8</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="reference_number" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">6ff8101e509011e19827d4bed9adc84f</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ideal_id" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">3805468066ee11e3aa55e0db5512b250</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="payment_status" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">8d498aa7634211e3b9fd005056996a0d</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="account_name" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">8d498aa8634211e3a6b6005056996a0d</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="account_city" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="iban" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">8d498aaa634211e3bf22005056996a0d</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="confirm_proces" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">b0745c4f670111e3be84e0db5512b250</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="view_last_page" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1ece8b77326c11e4c107e0db5512b240</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="p2.MT_data_IDEAL_status">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_data_IDEAL_status" element="p2:MT_data_IDEAL_status"/>
+  </wsdl:message>
+  <wsdl:portType name="Ideal_Status_Out">
+    <wsdl:documentation/>
+    <wsdl:operation name="Update">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Update"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:p2.MT_data_IDEAL_status"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Ideal_Status_OutBinding" type="p1:Ideal_Status_Out">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ideal_Status_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:Ideal_Status_OutBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Finternet" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:Ideal_Status_OutBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Finternet" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http://nsc.nl/xi/internet</con:endpoint><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http://nsc.nl/xi/internet</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http://nsc.nl/xi/internet</con:endpoint></con:endpoints><con:operation id="eaf7e211-7450-44ed-959e-f7877d12566c" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Update" bindingOperationName="Update" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="437b5533-3a14-4a5c-be63-7e7a7700a86b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http://nsc.nl/xi/internet</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cdm="http://nsc.nl/xi/ks/cdm">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cdm:MT_data_IDEAL_status>\r
+         <control_area>\r
+            <source>ORDER-API</source>\r
+            <source_send_date>2018-07-26T18:32:46.589+02:00</source_send_date>\r
+            <user_name>ORDER-API</user_name>\r
+            <message_id>ISS_REMOTE</message_id>\r
+            <correlation_id>08411393233152266622</correlation_id>\r
+            <!--Optional:-->\r
+            <!-- <send_mail></send_mail>\r -->
+            <!--Optional:-->\r
+            <!-- <endoftime></endoftime>\r -->
+         </control_area>\r
+         <!-- Rxx_processnummer # contractnummer # NSR-nummer -->
+         <reference_number>R20_0200006284#0710002059#20027769</reference_number>\r
+         <!--Optional:-->\r
+         <ideal_id>0030003087654321</ideal_id>\r
+         <!--Optional:-->\r
+         <!-- Expired | Success | Cancelled -->
+         <payment_status>Success</payment_status>\r
+         <!--Optional:-->\r
+         <account_name>MICKEY</account_name>\r
+         <!--Optional:-->\r
+         <!-- <account_city>?</account_city>\r -->
+         <!--Optional:-->\r
+         <iban>NL21INGB0316611425</iban>\r
+         <confirm_proces>false</confirm_proces>\r
+         <view_last_page>false</view_last_page>\r
+      </cdm:MT_data_IDEAL_status>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="2cc0a633-dbec-4712-96f0-b781b98a6fce" name="Ideal_Status_OutBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7b35a785-ebb3-4e94-b38c-4e38d258ff16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Update TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="709d390f-8526-4afc-b522-782bcf8f4a95" name="Update"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Ideal_Status_OutBinding</con:interface><con:operation>Update</con:operation><con:request name="Update" id="337d22ee-272a-4327-84c6-871db6403b22"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Ideal_Status_Out&amp;interfaceNamespace=http://nsc.nl/xi/internet</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cdm="http://nsc.nl/xi/ks/cdm">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cdm:MT_data_IDEAL_status>
+         <control_area>
+            <source>ORDER-API</source>
+            <source_send_date>2018-07-26T18:32:46.589+02:00</source_send_date>
+            <user_name>ORDER-API</user_name>
+            <message_id>ISS_REMOTE</message_id>
+            <correlation_id>08411393233152266622</correlation_id>
+            <!--Optional:-->
+            <!-- <send_mail></send_mail>
+ -->
+            <!--Optional:-->
+            <!-- <endoftime></endoftime>
+ -->
+         </control_area>
+         <!-- Rxx_processnummer # contractnummer # NSR-nummer -->
+         <reference_number>R20_0200006284#0710002059#20027769</reference_number>
+         <!--Optional:-->
+         <ideal_id>0030003087654321</ideal_id>
+         <!--Optional:-->
+         <!-- Expired | Success | Cancelled -->
+         <payment_status>Success</payment_status>
+         <!--Optional:-->
+         <account_name>MICKEY</account_name>
+         <!--Optional:-->
+         <!-- <account_city>?</account_city>
+ -->
+         <!--Optional:-->
+         <iban>NL21INGB0316611425</iban>
+         <confirm_proces>false</confirm_proces>
+         <view_last_page>false</view_last_page>
+      </cdm:MT_data_IDEAL_status>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

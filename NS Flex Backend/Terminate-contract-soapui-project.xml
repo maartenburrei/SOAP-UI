@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="70231c7c-bc37-41d1-ab3f-f9724e838509" activeEnvironment="Default" name="Terminate contract" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="28edc261-df5b-49e4-8432-f461d14c76e4" wsaVersion="NONE" name="Dunning_OutBinding" type="wsdl" bindingName="{http://nsr.pi/sap-fici/INT_750_01}Dunning_OutBinding" soapVersion="1_1" anonymous="optional" definition="http://sw025v445.dev.sp01.nl/dir/wsdl?p=ic/dc467e0debab36a48621278264730112" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sw025v445.dev.sp01.nl/dir/wsdl?p=ic/dc467e0debab36a48621278264730112"><con:part><con:url>http://sw025v445.dev.sp01.nl/dir/wsdl?p=ic/dc467e0debab36a48621278264730112</con:url><con:content><![CDATA[<wsdl:definitions name="Dunning_Out" targetNamespace="http://nsr.pi/sap-fici/INT_750_01" xmlns:p2="http://nsc.nl/xi/sap_crm/HB" xmlns:p1="http://nsr.pi/sap-fici/INT_750_01" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_Terminate_Contract"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/sap_crm/HB" xmlns="http://nsc.nl/xi/sap_crm/HB" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://nsr.pi/sap-fici/INT_750_01"/>
+      <xsd:element name="Terminate_Contract_Request" type="p1:Terminate_Contract_Request"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://nsr.pi/sap-fici/INT_750_01" xmlns="http://nsr.pi/sap-fici/INT_750_01" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="Terminate_Contract_Request">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">822652b979ec11e8bb540000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Reference_Nr" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">81efc36f79ec11e891c6005056a04e09</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Contract_Nr" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">81efc37079ec11e8bf3a005056a04e09</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Process_Id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">81efc37179ec11e8b8e7005056a04e09</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Reason" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">81efc37279ec11e8a0ce005056a04e09</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ContractAccount" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Agreement" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Dates">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">81efc37579ec11e8b1e0005056a04e09</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Order" type="xsd:date">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">81efc37379ec11e8945f005056a04e09</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="Delivery" type="xsd:date">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">81efc37479ec11e8aa3e005056a04e09</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Terminate_Contract_Request">
+    <wsdl:documentation/>
+    <wsdl:part name="Terminate_Contract_Request" element="p2:Terminate_Contract_Request"/>
+  </wsdl:message>
+  <wsdl:portType name="Dunning_Out">
+    <wsdl:documentation/>
+    <wsdl:operation name="Terminate_Contract">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Terminate_Contract"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:Terminate_Contract_Request"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Dunning_OutBinding" type="p1:Dunning_Out">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="Terminate_Contract">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Dunning_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:Dunning_OutBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http%3A%2F%2Fnsr.pi%2Fsap-fici%2FINT_750_01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:Dunning_OutBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http%3A%2F%2Fnsr.pi%2Fsap-fici%2FINT_750_01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint><con:endpoint>http://sw025v449.acc.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint><con:endpoint>http://sw025v573.prod.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=PRD_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint></con:endpoints><con:operation id="4a5e3abc-c9ee-4bb5-9ff9-3cbcd5f64ca5" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Terminate_Contract" bindingOperationName="Terminate_Contract" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b931f4e0-d723-4085-9134-d08301c175cb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v449.acc.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hb="http://nsc.nl/xi/sap_crm/HB">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hb:Terminate_Contract_Request>\r
+         <Reference_Nr>R05_BAK0022</Reference_Nr>\r
+         <Contract_Nr>810000010</Contract_Nr>\r
+         <Process_Id>ZNS_BEEINDIGING_ABO</Process_Id>\r
+         <Reason/>\r
+         <Dates>\r
+            <Order>2018-10-04</Order>\r
+            <Delivery>2018-10-04</Delivery>\r
+         </Dates>\r
+      </hb:Terminate_Contract_Request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cab004ec-f2a8-4292-9839-216f3b361fdf" wsaVersion="NONE" name="Process_MonitoringBinding" type="wsdl" bindingName="{http://nsc.nl/xi/BAM}Process_MonitoringBinding" soapVersion="1_1" anonymous="optional" definition="http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/d7c64f2770cb3d6285a6f0611609dba6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/d7c64f2770cb3d6285a6f0611609dba6"><con:part><con:url>http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/d7c64f2770cb3d6285a6f0611609dba6</con:url><con:content><![CDATA[<wsdl:definitions name="Process_Monitoring" targetNamespace="http://nsc.nl/xi/BAM" xmlns:p3="http://nsc.nl/xi/internet/cdm" xmlns:p2="http://nsc.nl/xi/int/cdm" xmlns:p1="http://nsc.nl/xi/BAM" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_Create_Process"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/internet/cdm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/internet/cdm">
+      <xsd:complexType name="Process_Operations_Response">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">e2653c005e3411e692dc0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Header" type="Process_Operations_Header"/>
+          <xsd:element name="Error_Area" type="Error_Area" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Process_Operations_Header">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">d33db8205e3211e6ccce0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Object_Id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">d3d13a3b5e3111e69ec0005056a06a86</xsd:appinfo>
+              <xsd:documentation>Specific process to be created</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Identifier" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">17e20cd15e3211e6ab78005056a06a86</xsd:appinfo>
+              <xsd:documentation>Reference Number</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Error_Area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">4283f6e25ef911e692650000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Errors">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">df255f5532d911e69886005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Error_Message" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">df255f5432d911e6adc4005056a06a86</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Message_Timestamp" type="xsd:dateTime">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df255f5032d911e6972c005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Message_Source">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df255f5132d911e69d6f005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="3"/>
+                            <xsd:maxLength value="16"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="Message_Type">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df255f5232d911e6c28d005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="error"/>
+                            <xsd:enumeration value="warning"/>
+                            <xsd:enumeration value="information"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="Message_Code">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df255f5332d911e6bb02005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:integer">
+                            <xsd:totalDigits value="6"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="Message_Location" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">141eb28d32da11e69992005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Message_Text" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">141eb28e32da11e6a9a4005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Message_Additional_Info" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">141eb28f32da11e68af8005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Process_Operations_Request">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">b1b43f045e3411e6900c0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Header" type="Process_Operations_Header"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/int/cdm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:p39="http://nsc.nl/xi/internet/cdm" xmlns="http://nsc.nl/xi/int/cdm">
+      <xsd:import namespace="http://nsc.nl/xi/internet/cdm"/>
+      <xsd:element name="Process_Monitoring_Create_Request" type="p39:Process_Operations_Request"/>
+      <xsd:element name="Process_Monitoring_Create_Response" type="p39:Process_Operations_Response"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="p3.Process_Monitoring_Create_Request">
+    <wsdl:documentation/>
+    <wsdl:part name="Process_Monitoring_Create_Request" element="p2:Process_Monitoring_Create_Request"/>
+  </wsdl:message>
+  <wsdl:message name="p3.Process_Monitoring_Create_Response">
+    <wsdl:documentation/>
+    <wsdl:part name="Process_Monitoring_Create_Response" element="p2:Process_Monitoring_Create_Response"/>
+  </wsdl:message>
+  <wsdl:portType name="Process_Monitoring">
+    <wsdl:documentation/>
+    <wsdl:operation name="Create_Process">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Create_Process"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:p3.Process_Monitoring_Create_Request"/>
+      <wsdl:output message="p1:p3.Process_Monitoring_Create_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Process_MonitoringBinding" type="p1:Process_Monitoring">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="Create_Process">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Process_MonitoringService">
+    <wsdl:port name="HTTP_Port" binding="p1:Process_MonitoringBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2FBAM" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:Process_MonitoringBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2FBAM" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint><con:endpoint>http://sw025v573.prod.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=PRD_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint></con:endpoints><con:operation id="6bd76ff2-fb69-477a-a207-62999abc9484" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Create_Process" bindingOperationName="Create_Process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="824862cd-af7e-4a35-ab84-239c31caa9f1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cdm="http://nsc.nl/xi/int/cdm">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cdm:Process_Monitoring_Create_Request>\r
+         <Header>\r
+            <Object_Id>?</Object_Id>\r
+            <Identifier>?</Identifier>\r
+         </Header>\r
+      </cdm:Process_Monitoring_Create_Request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="89c2fd10-767a-4553-9181-300cf0abf365" name="Dunning_OutBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="173b141c-bd6d-45fd-8cf2-9505cafe2187" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Terminate_Contract TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Genereren Referentienummer" id="7a337c44-0682-43fe-9b3f-f4fab6e7d09f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Process_MonitoringBinding</con:interface><con:operation>Create_Process</con:operation><con:request name="Genereren Referentienummer" id="55396494-179b-4fba-8945-9229a82b83ca"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v573.prod.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=PRD_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cdm="http://nsc.nl/xi/int/cdm">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cdm:Process_Monitoring_Create_Request>\r
+         <Header>\r
+            <Object_Id>R05</Object_Id>\r
+            <Identifier></Identifier>\r
+         </Header>\r
+      </cdm:Process_Monitoring_Create_Request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8e46cb29-a6fb-4a27-8c57-0d31c09f6291"/><con:assertion type="SOAP Fault Assertion" id="045decfc-75c2-4f25-b1b9-35ff7dc4ee93" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" id="585d93ca-138f-47b4-9e5b-604b61ad64bd" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:username>bijvankj</con:username><con:password>@PIKlatchian15! </con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="fec8fbd5-fe56-4802-885b-b15e1f821a2f" name="Terminate_Contract"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Dunning_OutBinding</con:interface><con:operation>Terminate_Contract</con:operation><con:request name="Terminate_Contract" id="afa1bd8b-d1c4-43f4-bd01-df30e990b1ab"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v573.prod.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=PRD_ECC_PI&amp;receiverParty=&amp;receiverService=&amp;interface=Dunning_Out&amp;interfaceNamespace=http://nsr.pi/sap-fici/INT_750_01</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hb="http://nsc.nl/xi/sap_crm/HB">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hb:Terminate_Contract_Request>
+         <Reference_Nr>R05_BAK0022</Reference_Nr>
+         <Contract_Nr>810000010</Contract_Nr>
+         <Process_Id>ZNS_BEEINDIGING_ABO</Process_Id>
+         <Reason/>
+         <Dates>
+            <Order>2018-10-16</Order>
+            <Delivery>2018-10-16</Delivery>
+         </Dates>
+      </hb:Terminate_Contract_Request>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="soapui" password="soapui">http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint><con:endpoint mode="COMPLEMENT" username="soapui">https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_INTERNET&amp;receiverParty=&amp;receiverService=&amp;interface=Process_Monitoring&amp;interfaceNamespace=http://nsc.nl/xi/BAM</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

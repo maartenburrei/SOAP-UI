@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="26d855ac-0920-4d7d-b107-d21c42674f15" activeEnvironment="Default" name="09. NS Flex BRF+ - Testen Dev - v0.1" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="97bc9577-fc87-4bde-a4c8-72c7236c2512" wsaVersion="NONE" name="NS_Flex_OutbBinding" type="wsdl" bindingName="{http://nsc.nl/xi/int/NSFlex}NS_Flex_OutbBinding" soapVersion="1_1" anonymous="optional" definition="http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/1ac6b454342d38368d89ba295086f807" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/1ac6b454342d38368d89ba295086f807"><con:part><con:url>http://sw025v445.dev.sp01.nl:80/dir/wsdl?p=ic/1ac6b454342d38368d89ba295086f807</con:url><con:content><![CDATA[<wsdl:definitions name="NS_Flex_Outb" targetNamespace="http://nsc.nl/xi/int/NSFlex" xmlns:p3="http://nsc.nl/xi/internet" xmlns:p2="http://nsc.nl/xi/sap_crm/brfplus" xmlns:p1="http://nsc.nl/xi/int/NSFlex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_Validate_Order"/>
+  <wsp:Policy wsu:Id="OP_Validate_Migration"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/int/NSFlex" xmlns="http://nsc.nl/xi/int/NSFlex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="ROR_Order_Validation">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">f44e442816e211e88e050000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Contracten">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1158394a8be311e78ce1005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Contract" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">115839498be311e78346005056a06a86</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="IsActief" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839448be311e7ca99005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Product" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839458be311e7afd6005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Looptijd" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839468be311e78eb1005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="OpenOrder" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839478be311e7a951005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="GeldigeIBAN" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839488be311e7a083005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="ProductType" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">195324d0b33d11e79236005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="heeftMeerdereRosContracten" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">195324d1b33d11e7c33a005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="BestellerIsContracthouder" type="xsd:boolean"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ROR_BRFplus_Response">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">ef18a72316e011e895aa0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="isAllowed" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">520314a6b4a211e7ca92005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Messages" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">520314a8b4a211e7c4ca005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Message" maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Type" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">520314a7b4a211e7cebf005056a06a86</xsd:appinfo>
+                          <xsd:documentation>defines if the message is an error or informational</xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Identifier" type="xsd:string"/>
+                      <xsd:element name="Number" type="xsd:string"/>
+                      <xsd:element name="Message" type="xsd:string"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/sap_crm/brfplus" xmlns="http://nsc.nl/xi/sap_crm/brfplus" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://nsc.nl/xi/int/NSFlex"/>
+      <xsd:element name="ROR_Validate_Order" type="p1:ROR_Order_Validation"/>
+      <xsd:element name="mt_validate_migration_request" type="dt_validate_migration_request"/>
+      <xsd:element name="mt_validate_migration_response" type="dt_validate_migration_response"/>
+      <xsd:complexType name="dt_validate_migration_response">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">88f1cc64b4a211e7bcdd0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="isAllowed" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9bb751a38bdc11e7a971005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Messages" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">594ff1608bde11e7bc90005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Message" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">88ae3e14b4a211e79c51005056a06a86</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Type" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">88ae3e10b4a211e7cf28005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Identifier" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">88ae3e11b4a211e7b509005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Number" type="xsd:integer">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">88ae3e12b4a211e7a330005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Message" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">88ae3e13b4a211e79a0d005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="dt_validate_migration_request">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">19abac34b33d11e791b30000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Contracten">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1158394a8be311e78ce1005056a06a86</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Contract" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">115839498be311e78346005056a06a86</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="IsActief" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839448be311e7ca99005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Product" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839458be311e7afd6005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Looptijd" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839468be311e78eb1005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="OpenOrder" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839478be311e7a951005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="GeldigeIBAN" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">115839488be311e7a083005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="ProductType" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">195324d0b33d11e79236005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="heeftMeerdereRosContracten" type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">195324d1b33d11e7c33a005056a06a86</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="BestellerIsContracthouder" type="xsd:boolean"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/internet" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/internet">
+      <xsd:import namespace="http://nsc.nl/xi/int/NSFlex"/>
+      <xsd:element name="ROR_BRFplus_Response" type="p1:ROR_BRFplus_Response"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ROR_Validate_Order">
+    <wsdl:documentation/>
+    <wsdl:part name="ROR_Validate_Order" element="p2:ROR_Validate_Order"/>
+  </wsdl:message>
+  <wsdl:message name="ROR_BRFplus_Response">
+    <wsdl:documentation/>
+    <wsdl:part name="ROR_BRFplus_Response" element="p3:ROR_BRFplus_Response"/>
+  </wsdl:message>
+  <wsdl:message name="p2.mt_validate_migration_request">
+    <wsdl:documentation/>
+    <wsdl:part name="mt_validate_migration_request" element="p2:mt_validate_migration_request"/>
+  </wsdl:message>
+  <wsdl:message name="p2.mt_validate_migration_response">
+    <wsdl:documentation/>
+    <wsdl:part name="mt_validate_migration_response" element="p2:mt_validate_migration_response"/>
+  </wsdl:message>
+  <wsdl:portType name="NS_Flex_Outb">
+    <wsdl:documentation/>
+    <wsdl:operation name="Validate_Order">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Validate_Order"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:ROR_Validate_Order"/>
+      <wsdl:output message="p1:ROR_BRFplus_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="Validate_Migration">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Validate_Migration"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:p2.mt_validate_migration_request"/>
+      <wsdl:output message="p1:p2.mt_validate_migration_response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NS_Flex_OutbBinding" type="p1:NS_Flex_Outb">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="Validate_Order">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate_Migration">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NS_Flex_OutbService">
+    <wsdl:port name="HTTP_Port" binding="p1:NS_Flex_OutbBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fint%2FNSFlex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:NS_Flex_OutbBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fint%2FNSFlex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint></con:endpoints><con:operation id="7fff19a6-7762-4201-ae86-9427ee1b4710" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Validate_Migration" bindingOperationName="Validate_Migration" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2bd4aada-9b5e-4daa-a4f7-75edd14cbb0e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:brf="http://nsc.nl/xi/sap_crm/brfplus">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <brf:mt_validate_migration_request>\r
+         <Contracten>\r
+            <!--1 or more repetitions:-->\r
+            <Contract>\r
+               <IsActief>?</IsActief>\r
+               <Product>?</Product>\r
+               <Looptijd>?</Looptijd>\r
+               <OpenOrder>?</OpenOrder>\r
+               <GeldigeIBAN>?</GeldigeIBAN>\r
+               <ProductType>?</ProductType>\r
+               <heeftMeerdereRosContracten>?</heeftMeerdereRosContracten>\r
+               <BestellerIsContracthouder>?</BestellerIsContracthouder>\r
+            </Contract>\r
+         </Contracten>\r
+      </brf:mt_validate_migration_request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="581549f4-785a-446c-9287-8c039d3ecdf3" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Validate_Order" bindingOperationName="Validate_Order" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9eceda88-94d4-4e8d-a988-f1a4307bf371" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:brf="http://nsc.nl/xi/sap_crm/brfplus">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <brf:ROR_Validate_Order>\r
+         <Contracten>\r
+            <!--1 or more repetitions:-->\r
+            <Contract>\r
+               <IsActief>?</IsActief>\r
+               <Product>?</Product>\r
+               <Looptijd>?</Looptijd>\r
+               <OpenOrder>?</OpenOrder>\r
+               <GeldigeIBAN>?</GeldigeIBAN>\r
+               <ProductType>?</ProductType>\r
+               <heeftMeerdereRosContracten>?</heeftMeerdereRosContracten>\r
+               <BestellerIsContracthouder>?</BestellerIsContracthouder>\r
+            </Contract>\r
+         </Contracten>\r
+      </brf:ROR_Validate_Order>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="7425a124-c760-4083-80d1-81493b4c89c1" name="NS_Flex_OutbBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a0e4902a-d9ed-4136-a452-ab34aea123f9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Validate_Migration TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="835506eb-0d36-4348-add2-3614697feb78" name="Validate_Migration"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NS_Flex_OutbBinding</con:interface><con:operation>Validate_Migration</con:operation><con:request name="Validate_Migration" id="40cb1fd8-1880-4fc7-8bef-bfd0bdc1f2e1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:brf="http://nsc.nl/xi/sap_crm/brfplus">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <brf:mt_validate_migration_request>\r
+         <Contracten>\r
+            <!--1 or more repetitions:-->\r
+            <Contract>\r
+               <IsActief>true</IsActief>\r
+               <Product>WVR</Product>\r
+               <Looptijd>DRLP</Looptijd>\r
+               <OpenOrder>false</OpenOrder>\r
+               <GeldigeIBAN>true</GeldigeIBAN>\r
+               <ProductType>AB</ProductType>\r
+               <heeftMeerdereRosContracten>true</heeftMeerdereRosContracten>\r
+               <BestellerIsContracthouder>true</BestellerIsContracthouder>\r
+            </Contract>\r
+         </Contracten>\r
+      </brf:mt_validate_migration_request>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="47e80780-ad5e-44a2-9c82-664cf820b8d8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Validate_Order TestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Read Excel" id="3ccb91b6-1faa-4774-b177-cbe51608e0d7"><con:settings/><con:config><script>import com.eviware.soapui.support.XmlHolder
+import java.io.File
+import java.io.IOException
+import jxl.*
+import jxl.write.* 
+
+log.info("Testing Started")
+
+def inputDataFileName = "G:/NSC-Klantsystemen/AfdelingKS/Projecten/NS Flex/SOAPUI/Automated tests/Test Data/BRF+ test.xls"
+def outputfileName = "G:/NSC-Klantsystemen/AfdelingKS/Projecten/NS Flex/SOAPUI/Automated tests/Test Output/BRF+ test - resultaat.xls"
+def inputDataSheetName = "Blad1"
+def workbook
+
+def reqOperationName = "Validate_Order"
+def responsesCount = 0
+String[] Responses = null
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+try{	
+	workbook = Workbook.getWorkbook(new File(inputDataFileName))
+	Sheet sheet = workbook.getSheet(inputDataSheetName)
+	rowcount = sheet.getRows()	
+	log.info(rowcount)
+	Responses = new String[rowcount-1]
+	responsesCount = rowcount-1
+    	colcount = sheet.getColumns()
+   	log.info(colcount)
+
+	for(Row in 1..rowcount-1){ 
+		def reqholder = groovyUtils.getXmlHolder(reqOperationName+"#Request")
+		for(Column in 2..colcount-4){		
+			String reqTagName = sheet.getCell(Column,0).getContents()
+	        	def TagCount = reqholder["count(//*:"+reqTagName+")"]
+	        	if(TagCount!=0){
+	          	String reqTagValue = sheet.getCell(Column,Row).getContents()	          	
+	            	reqholder.setNodeValue("//*:"+reqTagName, reqTagValue)
+	            	reqholder.updateProperty()                              
+	        	}		
+		}
+		
+		testRunner.runTestStepByName(reqOperationName)
+		reqholder = groovyUtils.getXmlHolder(reqOperationName+"#Response")
+		String expectedValue = sheet.getCell(10,Row).getContents()
+		//log.info  expectedValue
+		String respTagValue = reqholder.getNodeValue("//*:isAllowed")		
+		//log.info respTagValue
+
+		if( respTagValue != expectedValue )
+			Responses[Row-1] = "X"
+		else
+			Responses[Row-1] = "V"
+	}	
+
+	WritableWorkbook workbookCopy = Workbook.createWorkbook(new File(outputfileName), workbook);
+	WritableSheet sheetToEdit = workbookCopy.getSheet(inputDataSheetName);
+	//traversal
+	for(Row in 1..rowcount-1){//rowcount-1	
+		//log.info Responses[Row-1]
+		Label labelC = new Label(12, Row, Responses[Row-1]); 
+		sheetToEdit.addCell(labelC); 
+	}
+       workbookCopy.write();  
+       workbookCopy.close();
+}
+catch (Exception e) {log.info(e)}
+finally{	
+	workbook.close();
+	//workbookCopy.close();
+	log.info("Testing eind")
+}
+
+//return true</script></con:config></con:testStep><con:testStep type="request" name="Validate_Order" id="c7d2a48a-4ecc-4fd0-8a41-0a7ff03c15af" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NS_Flex_OutbBinding</con:interface><con:operation>Validate_Order</con:operation><con:request name="Validate_Order" id="e006f8cb-172b-4600-9316-c725a76aba7c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=TestNS&amp;senderService=NSC_CPD_200&amp;receiverParty=&amp;receiverService=&amp;interface=NS_Flex_Outb&amp;interfaceNamespace=http://nsc.nl/xi/int/NSFlex</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:brf="http://nsc.nl/xi/sap_crm/brfplus">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <brf:ROR_Validate_Order>
+         <Contracten>
+            <!--1 or more repetitions:-->
+            <Contract>
+               <IsActief>false</IsActief>
+               <Product>WVR</Product>
+               <Looptijd>DRLP</Looptijd>
+               <OpenOrder>true</OpenOrder>
+               <GeldigeIBAN>true</GeldigeIBAN>
+               <ProductType>AB</ProductType>
+               <heeftMeerdereRosContracten>false</heeftMeerdereRosContracten>
+               <BestellerIsContracthouder>true</BestellerIsContracthouder>
+            </Contract>
+         </Contracten>
+      </brf:ROR_Validate_Order>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="77989945-2e84-47a4-ac73-9d76c43285ad"/><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

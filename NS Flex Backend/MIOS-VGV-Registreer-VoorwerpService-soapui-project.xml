@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="eb288107-bdee-4888-bded-0168b55164dd" activeEnvironment="Default" name="MIOS_VGV_Registreer_VoorwerpService" resourceRoot="" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="20606d49-bf39-43c7-9e2f-2f658bab8205" wsaVersion="NONE" name="MIOS_VGV_Registreer_VoorwerpBinding" type="wsdl" bindingName="{http://nsc.nl/xi/iss}MIOS_VGV_Registreer_VoorwerpBinding" soapVersion="1_1" anonymous="optional" definition="file:/H:/SOAP-UI/NS%20Flex%20Backend/MIOS_VGV_Registreer_VoorwerpService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\H:\SOAP-UI\NS%20Flex%20Backend\MIOS_VGV_Registreer_VoorwerpService.wsdl"><con:part><con:url>file:\H:\SOAP-UI\NS%20Flex%20Backend\MIOS_VGV_Registreer_VoorwerpService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MIOS_VGV_Registreer_Voorwerp" targetNamespace="http://nsc.nl/xi/iss" xmlns:p1="http://nsc.nl/xi/iss" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_Verloren_Voorwerp"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/iss" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/iss">
+      <xsd:element name="MT_VGV_Registreer_Verloren_Voorwerp_Antwoord" type="DT_VGV_Registreer_Verloren_Voorwerp_Antwoord"/>
+      <xsd:element name="MT_VGV_Registreer_Verloren_Voorwerp" type="DT_VGV_Registreer_Verloren_Voorwerp"/>
+      <xsd:complexType name="DT_VGV_Registreer_Verloren_Voorwerp">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">VGV - Registreer verloren voorwerp</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">5cf0f7669ce211e5b5c60000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="control_area" type="DT_control_area">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5a4a718a977611e5ba782c59e5364ea0</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="verloren_voorwerp" type="DT_VGV_Verloren_Voorwerp">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">5a4a718e977611e5838b2c59e5364ea0</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_control_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">523f96049ce211e58e5f0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="source" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06658a8611e098d4f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="source_send_date" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06668a8611e0bd07f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="user_name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06678a8611e0c8c9f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="message_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06688a8611e08225f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="correlation_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06698a8611e09372f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_VGV_Registreer_Verloren_Voorwerp_Antwoord">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">VGV - Registreer verloren voorwerp antwoord</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">047974a19dae11e5b0fe0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="control_area" type="DT_control_area">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">819c9ad6977a11e5b9f72c59e5364ea0</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="fouten_area" type="DT_VGV_Foutmeldingen" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">34d8a7b8977d11e5c3412c59e5364ea0</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="gevonden_voorwerp_id" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">34d8a7b9977d11e5c55b2c59e5364ea0</xsd:appinfo>
+              <xsd:documentation>Voorwerp ID van gevonden voorwerp</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_VGV_Verloren_Voorwerp">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">VGV - Verloren voorwerp</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">f8826f32fc6711e8a98d0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="categorie_guid">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1936de1f977311e5b3322c59e5364ea0</xsd:appinfo>
+              <xsd:documentation>Categorie-ID</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:length value="32"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="kleur_id">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1936de20977311e5809b2c59e5364ea0</xsd:appinfo>
+              <xsd:documentation>Kleurcode</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="15"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="details" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1936de21977311e588d22c59e5364ea0</xsd:appinfo>
+              <xsd:documentation>Details</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="200"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="merk" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">1936de22977311e5c4342c59e5364ea0</xsd:appinfo>
+              <xsd:documentation>Merknaam</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="30"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="nsrcustomer_nr">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6fefe9cdd11e5c4852c59e5372428</xsd:appinfo>
+              <xsd:documentation>NSR nummer</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="10"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="customer_email_address" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">f8102ccefc6711e8cf58005056b95623</xsd:appinfo>
+              <xsd:documentation>E-mail adres t.b.v. communicatie in het VGV proces</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="verliesdatum" type="xsd:date">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6feff9cdd11e5c2712c59e5372428</xsd:appinfo>
+              <xsd:documentation>Datum van verlies</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="verlieslocatie">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6ff009cdd11e5b0d82c59e5372428</xsd:appinfo>
+              <xsd:documentation>Locatie van verlies</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:minLength value="5"/>
+                <xsd:maxLength value="8"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="station_van" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6ff019cdd11e5abe22c59e5372428</xsd:appinfo>
+              <xsd:documentation>Beginstation van reis</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int">
+                <xsd:totalDigits value="4"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="station_naar" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6ff029cdd11e5c4ae2c59e5372428</xsd:appinfo>
+              <xsd:documentation>Eindstation van reis</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int">
+                <xsd:totalDigits value="4"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="treinnummer" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6ff039cdd11e5b05d2c59e5372428</xsd:appinfo>
+              <xsd:documentation>Treinnummer van reis</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:nonNegativeInteger">
+                <xsd:totalDigits value="8"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="station" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78e6ff049cdd11e58bd02c59e5372428</xsd:appinfo>
+              <xsd:documentation>Station van verlies</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int">
+                <xsd:totalDigits value="4"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_VGV_Foutmeldingen">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">VGV - Foutmeldingen</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">97c64ef09ce311e58dd20000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="foutmeldingen" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9eecb3be9ce311e5b1672c59e5372428</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="timestamp" type="xsd:dateTime">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c39ce311e5a6412c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="source">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c49ce311e5cab72c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:minLength value="3"/>
+                      <xsd:maxLength value="16"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="type">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c59ce311e5cf022c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:enumeration value="error"/>
+                      <xsd:enumeration value="warning"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="code">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c69ce311e5bf4b2c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:integer">
+                      <xsd:totalDigits value="6"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="locatie">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c79ce311e5bc762c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:maxLength value="2000"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="tekst">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c89ce311e593ae2c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:maxLength value="2000"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="extra_info" minOccurs="0">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">9eeca9c99ce311e5c4ed2c59e5372428</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                      <xsd:maxLength value="2000"/>
+                    </xsd:restriction>
+                  </xsd:simpleType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_VGV_Registreer_Verloren_Voorwerp">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_VGV_Registreer_Verloren_Voorwerp" element="p1:MT_VGV_Registreer_Verloren_Voorwerp"/>
+  </wsdl:message>
+  <wsdl:message name="MT_VGV_Registreer_Verloren_Voorwerp_Antwoord">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_VGV_Registreer_Verloren_Voorwerp_Antwoord" element="p1:MT_VGV_Registreer_Verloren_Voorwerp_Antwoord"/>
+  </wsdl:message>
+  <wsdl:portType name="MIOS_VGV_Registreer_Voorwerp">
+    <wsdl:documentation/>
+    <wsdl:operation name="Verloren_Voorwerp">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_Verloren_Voorwerp"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_VGV_Registreer_Verloren_Voorwerp"/>
+      <wsdl:output message="p1:MT_VGV_Registreer_Verloren_Voorwerp_Antwoord"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MIOS_VGV_Registreer_VoorwerpBinding" type="p1:MIOS_VGV_Registreer_Voorwerp">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="Verloren_Voorwerp">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MIOS_VGV_Registreer_VoorwerpService">
+    <wsdl:port name="HTTP_Port" binding="p1:MIOS_VGV_Registreer_VoorwerpBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:MIOS_VGV_Registreer_VoorwerpBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint></con:endpoints><con:operation id="75f72579-7e8c-480b-90ac-feb504513cc6" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="Verloren_Voorwerp" bindingOperationName="Verloren_Voorwerp" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6147db87-60fc-45cc-b794-8e6f99af2b34" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <iss:MT_VGV_Registreer_Verloren_Voorwerp>\r
+         <control_area>\r
+            <source>gero et</source>\r
+            <source_send_date>sonoras imperio</source_send_date>\r
+            <user_name>quae divum incedo</user_name>\r
+            <message_id>verrantque per auras</message_id>\r
+            <correlation_id>per auras</correlation_id>\r
+         </control_area>\r
+         <verloren_voorwerp>\r
+            <categorie_guid>circum claustracircum claustraci</categorie_guid>\r
+            <kleur_id>nimborum in</kleur_id>\r
+            <!--Optional:-->\r
+            <details>foedere certo</details>\r
+            <!--Optional:-->\r
+            <merk>profundum quippe ferant</merk>\r
+            <nsrcustomer_nr>20055096</nsrcustomer_nr>\r
+            <!--Optional:-->\r
+            <customer_email_address>Kenneth.Boutisma@ns.nl</customer_email_address>\r
+            <verliesdatum>2019-12-16</verliesdatum>\r
+            <verlieslocatie>Trein</verlieslocatie>\r
+            <!--Optional:-->\r
+            <station_van>3</station_van>\r
+            <!--Optional:-->\r
+            <station_naar>3</station_naar>\r
+            <!--Optional:-->\r
+            <treinnummer>200</treinnummer>\r
+            <!--Optional:-->\r
+            <station>3</station>\r
+         </verloren_voorwerp>\r
+      </iss:MT_VGV_Registreer_Verloren_Voorwerp>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="c4d66eff-f0bf-4a4c-b36a-4c107b0bef7a" name="MIOS_VGV_Registreer_VoorwerpBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="997333db-e2c4-4a4d-9e47-19a34e05199d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1 bestaande klant zelfde email" searchProperties="true"><con:settings/><con:testStep type="request" id="15be2086-700b-4d1e-9503-0d203dc1fbf4" name="Verloren_Voorwerp"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MIOS_VGV_Registreer_VoorwerpBinding</con:interface><con:operation>Verloren_Voorwerp</con:operation><con:request name="Verloren_Voorwerp" id="6ec07f4b-e39c-4f56-a628-f56de882a594"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <iss:MT_VGV_Registreer_Verloren_Voorwerp>
+         <control_area>
+            <source>RKD</source>
+            <source_send_date>2018-12-11</source_send_date>
+            <user_name>RKD</user_name>
+            <message_id>LOST_ITEM_REGISTRATION</message_id>
+            <correlation_id>1234</correlation_id>
+         </control_area>
+         <verloren_voorwerp>
+            <categorie_guid>005056001C931EE5A8E36ABBE6898891</categorie_guid>
+            <kleur_id>RO</kleur_id>
+            <!--Optional:-->
+            <details>details</details>
+            <!--Optional:-->
+            <merk>loos</merk>
+            <nsrcustomer_nr>20055096</nsrcustomer_nr>
+            <!--Optional:-->
+            <customer_email_address>Kenneth.Boutisma@ns.nl</customer_email_address>
+            <verliesdatum>2018-12-10</verliesdatum>
+            <verlieslocatie>KLU</verlieslocatie>
+            <!--Optional:-->
+            <!-- <station_van></station_van>-->
+            <!--Optional:-->
+            <!-- <station_naar></station_naar>-->
+            <!--Optional:-->
+            <!-- <treinnummer>0</treinnummer>-->
+            <!--Optional:-->
+            <station>561</station>
+         </verloren_voorwerp>
+      </iss:MT_VGV_Registreer_Verloren_Voorwerp>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5a6df3ae-fa7c-4f1b-bfed-b7fdc938ba7c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2 bestaande klant ander email" searchProperties="true"><con:settings/><con:testStep type="request" id="94700304-fafc-4f6b-a021-9110487408d5" name="Verloren_Voorwerp"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MIOS_VGV_Registreer_VoorwerpBinding</con:interface><con:operation>Verloren_Voorwerp</con:operation><con:request name="Verloren_Voorwerp" id="6ec07f4b-e39c-4f56-a628-f56de882a594"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <iss:MT_VGV_Registreer_Verloren_Voorwerp>
+         <control_area>
+            <source>RKD</source>
+            <source_send_date>2018-12-11</source_send_date>
+            <user_name>RKD</user_name>
+            <message_id>LOST_ITEM_REGISTRATION</message_id>
+            <correlation_id>1234</correlation_id>
+         </control_area>
+         <verloren_voorwerp>
+            <categorie_guid>005056001C931EE5A8E36ABBE6898891</categorie_guid>
+            <kleur_id>RO</kleur_id>
+            <!--Optional:-->
+            <details>details</details>
+            <!--Optional:-->
+            <merk>loos</merk>
+            <nsrcustomer_nr>20055098</nsrcustomer_nr>
+            <!--Optional:-->
+            <customer_email_address>Moreno.GeerdsemaNEW@ns.nl</customer_email_address>
+            <verliesdatum>2018-12-10</verliesdatum>
+            <verlieslocatie>KLU</verlieslocatie>
+            <!--Optional:-->
+            <!-- <station_van></station_van>-->
+            <!--Optional:-->
+            <!-- <station_naar></station_naar>-->
+            <!--Optional:-->
+            <!-- <treinnummer>0</treinnummer>-->
+            <!--Optional:-->
+            <station>561</station>
+         </verloren_voorwerp>
+      </iss:MT_VGV_Registreer_Verloren_Voorwerp>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="42a6e118-f0bb-4324-99b2-b152cb7543bf" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3 bestaande klant ander email (voor ontkoppelen)" searchProperties="true"><con:settings/><con:testStep type="request" id="e873d69d-c3b5-4257-a5c6-38d7514b967f" name="Verloren_Voorwerp"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MIOS_VGV_Registreer_VoorwerpBinding</con:interface><con:operation>Verloren_Voorwerp</con:operation><con:request name="Verloren_Voorwerp" id="6ec07f4b-e39c-4f56-a628-f56de882a594"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=MIOS_VGV_Registreer_Voorwerp&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <iss:MT_VGV_Registreer_Verloren_Voorwerp>
+         <control_area>
+            <source>RKD</source>
+            <source_send_date>2018-12-11</source_send_date>
+            <user_name>RKD</user_name>
+            <message_id>LOST_ITEM_REGISTRATION</message_id>
+            <correlation_id>1234</correlation_id>
+         </control_area>
+         <verloren_voorwerp>
+            <categorie_guid>005056001C931EE5A8E36ABBE6898891</categorie_guid>
+            <kleur_id>RO</kleur_id>
+            <!--Optional:-->
+            <details>details</details>
+            <!--Optional:-->
+            <merk>loos</merk>
+            <nsrcustomer_nr>20055109</nsrcustomer_nr>
+            <!--Optional:-->
+            <customer_email_address>Rogier.BrandingaNEW@ns.nl</customer_email_address>
+            <verliesdatum>2018-12-10</verliesdatum>
+            <verlieslocatie>KLU</verlieslocatie>
+            <!--Optional:-->
+            <!-- <station_van></station_van>-->
+            <!--Optional:-->
+            <!-- <station_naar></station_naar>-->
+            <!--Optional:-->
+            <!-- <treinnummer>0</treinnummer>-->
+            <!--Optional:-->
+            <station>561</station>
+         </verloren_voorwerp>
+      </iss:MT_VGV_Registreer_Verloren_Voorwerp>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://sap.com/xi/WebService/soap1.1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

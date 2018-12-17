@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f65b23eb-b711-4a93-9b61-290dee922833" activeEnvironment="Default" name="NSC_ISS | Form_OutService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a85d757a-7cc4-45be-ae5b-1a4895ed3263" wsaVersion="NONE" name="Form_OutBinding" type="wsdl" bindingName="{http://nsc.nl/xi/iss}Form_OutBinding" soapVersion="1_1" anonymous="optional" definition="file:/H:/Documenten/NS%20Commercie/Service+/Refund/WSDL's/Form_OutService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\H:\Documenten\NS%20Commercie\Service+\Refund\WSDL's\Form_OutService.wsdl"><con:part><con:url>file:\H:\Documenten\NS%20Commercie\Service+\Refund\WSDL's\Form_OutService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Form_Out" targetNamespace="http://nsc.nl/xi/iss" xmlns:p1="http://nsc.nl/xi/iss" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_ConfirmForm_Sync"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nsc.nl/xi/iss" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://nsc.nl/xi/iss">
+      <xsd:element name="ConfirmFormResponse" type="ConfirmFormResponse"/>
+      <xsd:element name="ConfirmFormRequest" type="ConfirmFormRequest"/>
+      <xsd:complexType name="FormParameter">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">8853647df8fd11e68d090000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="value" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+      </xsd:complexType>
+      <xsd:complexType name="FormParameters">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">88a33c8b000011e78a800000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Parameter" type="FormParameter" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">321d2aa5f8ff11e68a69005056b95623</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConfirmFormResponse">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">aaf39c93f8fc11e6ae240000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0"/>
+          <xsd:element name="control_area" type="DT_control_area"/>
+          <xsd:element name="error_area" type="DT_error_area" minOccurs="0"/>
+          <xsd:element name="success" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_control_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">523f96049ce211e58e5f0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="source" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06658a8611e098d4f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="source_send_date" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06668a8611e0bd07f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="user_name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06678a8611e0c8c9f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="message_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06688a8611e08225f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="correlation_id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">369f06698a8611e09372f04da20220ad</xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConfirmFormRequest">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">a91d3c36f8fc11e6be7c0000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="header" type="operation_header" minOccurs="0"/>
+          <xsd:element name="control_area" type="DT_control_area"/>
+          <xsd:element name="Form" type="Form"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="operation_header">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">97cbabfa48c711e6c7620000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="version" type="xsd:integer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Form">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">e2192d1df8fd11e6a5910000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="type" type="xsd:string"/>
+          <xsd:element name="FormParameters" type="FormParameters" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_error_area">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">1d78dae8ae0e11e582240000003e7aba</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="errors" minOccurs="0">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd73401011e08955f04da2021657</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="error_message" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd72401011e08f8ef04da2021657</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="message_aditional_info" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd70401011e0b976f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_text" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6f401011e096a5f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_location" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6e401011e0be9af04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_timestamp" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6a401011e0b183f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_code" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6d401011e0bea1f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_type" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6c401011e08a8af04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="message_source" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">cc59bd6b401011e09664f04da2021657</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmFormRequest">
+    <wsdl:documentation/>
+    <wsdl:part name="ConfirmFormRequest" element="p1:ConfirmFormRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmFormResponse">
+    <wsdl:documentation/>
+    <wsdl:part name="ConfirmFormResponse" element="p1:ConfirmFormResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Form_Out">
+    <wsdl:documentation/>
+    <wsdl:operation name="ConfirmForm_Sync">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ConfirmForm_Sync"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:ConfirmFormRequest"/>
+      <wsdl:output message="p1:ConfirmFormResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Form_OutBinding" type="p1:Form_Out">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="ConfirmForm_Sync">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Form_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:Form_OutBinding">
+      <soap:address location="http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:Form_OutBinding">
+      <soap:address location="https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http%3A%2F%2Fnsc.nl%2Fxi%2Fiss" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sapcpa.acceptatie.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>http://sapcpd.ontwikkel.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>http://sw025v445.dev.sp01.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:endpoint>https://sw025v445.dev.sp01.nl:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEV_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint></con:endpoints><con:operation id="621fd153-bc72-41d1-a499-bcef4ad41f8f" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="ConfirmForm_Sync" bindingOperationName="ConfirmForm_Sync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="41da9f9e-5edf-43b2-8381-f5bc2601e560" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpa.acceptatie.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:iss="http://nsc.nl/xi/iss">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <iss:ConfirmFormRequest>\r
+         <!--Optional:-->\r
+        <header>
+        <version>1</version>
+      </header>
+      <control_area>
+        <source>HIPPO</source>
+        <source_send_date>2017-03-24T09:44:05.404+01:00</source_send_date>
+        <user_name>HIPPO</user_name>
+        <message_id>NO_SESSION</message_id>
+        <correlation_id>3b11f291-bec5-4202-8</correlation_id>
+      </control_area>
+      <Form>
+        <type>GTBV</type>
+        <FormParameters>
+          <Parameter name="account_owner_name">
+            <value>MICK</value>
+          </Parameter>
+          <Parameter name="actual_trip_is_intended_trip">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="add_comment">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="addon_1">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="addon_2">
+            <value>false</value>
+          </Parameter>
+          <Parameter name="birthdate">
+            <value>2017-03-01</value>
+          </Parameter>
+          <Parameter name="card_number_addon_et_1">
+            <value>111111111</value>
+          </Parameter>
+          <Parameter name="card_number_ct">
+            <value>00082017071401</value>
+          </Parameter>
+          <Parameter name="card_type">
+            <value>CT</value>
+          </Parameter>
+          <Parameter name="card_type_addon_1">
+            <value>ET</value>
+          </Parameter>
+          <Parameter name="city">
+            <value>Diemen</value>
+          </Parameter>
+          <Parameter name="claimed_delay_normaal">
+            <value>60-120</value>
+          </Parameter>
+          <Parameter name="comment">
+            <value>BCS-1915 - testscenario 6 voor aanpassing</value>
+          </Parameter>
+          <Parameter name="country">
+            <value>NL</value>
+          </Parameter>
+          <Parameter name="departure_time">
+            <value>08:24</value>
+          </Parameter>
+          <Parameter name="email_address">
+            <value>karin.vanleeuwen@ns.nl</value>
+          </Parameter>
+          <Parameter name="gender">
+            <value>Dhr</value>
+          </Parameter>
+          <Parameter name="housenumber">
+            <value>1</value>
+          </Parameter>
+          <Parameter name="iban">
+            <value>NL91ABNA0417164300</value>
+          </Parameter>
+          <Parameter name="icd_relevant">
+            <value>false</value>
+          </Parameter>
+          <Parameter name="initials">
+            <value>MICK</value>
+          </Parameter>
+          <!-- <Parameter name="intended_station_to">
+            <value>Dordrecht</value>
+          </Parameter> -->
+          <Parameter name="lastname">
+            <value>Mouse</value>
+          </Parameter>
+          <Parameter name="postal_code">
+            <value>1111AA</value>
+          </Parameter>
+          <Parameter name="prefix">
+            <value>de</value>
+          </Parameter>
+          <Parameter name="product_code_addon_1">
+            <value>84</value>
+          </Parameter>
+          <Parameter name="station_from">
+            <value>DDR</value>
+          </Parameter>
+          <Parameter name="station_to">
+            <value>HLM</value>
+          </Parameter>
+          <Parameter name="street">
+            <value>Diemerkade</value>
+          </Parameter>
+          <Parameter name="telephonenumber">
+            <value>0612345678</value>
+          </Parameter>
+          <Parameter name="terms_and_conditions">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="travel_date">
+            <value>2017-07-14</value>
+          </Parameter>
+        </FormParameters>
+      </Form>
+      </iss:ConfirmFormRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f3d92266-6d40-4a1b-99be-b3807bc6ceef" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sapcpa.acceptatie.ns.nl:80/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=ACC_ISS&amp;receiverParty=&amp;receiverService=&amp;interface=Form_Out&amp;interfaceNamespace=http://nsc.nl/xi/iss</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:ConfirmFormRequest xmlns:ns2="http://nsc.nl/xi/iss">
+      <header>
+        <version>1</version>
+      </header>
+      <control_area>
+        <source>HIPPO</source>
+        <source_send_date>2017-04-19T15:21:06.265+02:00</source_send_date>
+        <user_name>HIPPO</user_name>
+        <message_id>NO_SESSION</message_id>
+        <correlation_id>99d5cb42-71ac-4c33-9</correlation_id>
+      </control_area>
+      <Form>
+        <type>GTBV</type>
+        <FormParameters>
+          <Parameter name="account_owner_name">
+            <value>MICK</value>
+          </Parameter>
+          <Parameter name="actual_trip_is_intended_trip">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="addon_2">
+            <value>false</value>
+          </Parameter>
+          <Parameter name="birthdate">
+            <value>1970-03-01</value>
+          </Parameter>
+          <Parameter name="card_number_ov">
+            <value>3528010484363169</value>
+          </Parameter>
+          <Parameter name="card_type">
+            <value>OV</value>
+          </Parameter>
+          <Parameter name="city">
+            <value>Diemen</value>
+          </Parameter>
+          <Parameter name="claimed_delay_icd">
+            <value>30-60</value>
+          </Parameter>
+          <Parameter name="country">
+            <value>NL</value>
+          </Parameter>
+          <Parameter name="departure_time">
+            <value>17:28</value>
+          </Parameter>
+          <Parameter name="email_address">
+            <value>karin.vanleeuwen@ns.nl</value>
+          </Parameter>
+          <Parameter name="gender">
+            <value>Mw</value>
+          </Parameter>
+          <Parameter name="housenumber">
+            <value>1</value>
+          </Parameter>
+          <Parameter name="housenumber_ext">
+            <value></value>
+          </Parameter>
+          <Parameter name="iban">
+            <value>NL08INGB0000000555</value>
+          </Parameter>
+          <Parameter name="icd_relevant">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="initials">
+            <value>M.I.C.K.</value>
+          </Parameter>
+          <Parameter name="lastname">
+            <value>Mouse</value>
+          </Parameter>
+          <Parameter name="postal_code">
+            <value>1111AA</value>
+          </Parameter>
+          <Parameter name="product_code_addon_1">
+            <value>Nee</value>
+          </Parameter>
+          <Parameter name="station_from">
+            <value>RTD</value>
+          </Parameter>
+          <Parameter name="station_to">
+            <value>ASD</value>
+          </Parameter>
+          <Parameter name="street">
+            <value>Diemerkade</value>
+          </Parameter>
+          <Parameter name="telephonenumber">
+            <value>0612345678</value>
+          </Parameter>
+          <Parameter name="terms_and_conditions">
+            <value>true</value>
+          </Parameter>
+          <Parameter name="travel_date">
+            <value>2017-11-20</value>
+          </Parameter>
+        </FormParameters>
+      </Form>
+    </ns2:ConfirmFormRequest>
+  </S:Body>
+</S:Envelope>]]></con:request><con:credentials><con:username>soapui</con:username><con:password>soapui</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

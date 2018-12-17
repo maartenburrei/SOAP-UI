@@ -1,0 +1,2 @@
+New Customer;1
+http://sw025v449.acc.sp01.nl:80/sap/xi/engine?type=entry&version=3.0&Sender.Service=ACC_ISS&Interface=http://nsc.nl/xi/iss^MIOS_NSC0401_newCustomer&sap-client=100;1
